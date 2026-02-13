@@ -286,9 +286,14 @@
   color:var(--muted);
   text-align:center;
 }
-    .fine{display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px;}
-    .fine a{color: var(--muted); text-decoration:none}
-    .fine a:hover{color: var(--text); text-decoration:underline}
+    .fine{
+  display:flex;
+  justify-content:center;   /* zentriert alles */
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  width:100%;
+}
 
     /* WhatsApp Button */
     .whatsapp-btn{
