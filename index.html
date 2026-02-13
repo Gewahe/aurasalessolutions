@@ -527,21 +527,50 @@
       </div>
     </section>
 
-    <!-- Kontakt -->
-   <div class="wrap">
-  <div class="card">
-    <h2>Kontakt</h2>
-    <p>Sie möchten Ihre Tarife prüfen lassen oder haben Fragen? Schreiben Sie uns.</p>
+   <!-- Kontakt -->
+<section id="kontakt">
+  <div class="wrap">
+    <div class="card">
+      <h2 class="section-title">Kontakt</h2>
+      <p class="sub">Sie möchten Ihre Tarife prüfen lassen oder haben Fragen? Schreiben Sie uns.</p>
 
-    <form action="https://formsubmit.co/info@aurasalessolutions.de" method="POST">
-      
-      <!-- Spam-Schutz -->
-      <input type="hidden" name="_captcha" value="false">
+      <form action="https://formsubmit.co/info@aurasalessolutions.de" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Neue Anfrage über die Website (Aura Sales Solutions)">
+        <input type="hidden" name="_template" value="table">
 
-      <div style="margin-bottom:12px;">
-        <input type="text" name="name" placeholder="Ihr Name" required
-          style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;">
-      </div>
+        <label>Name</label>
+        <input name="name" required>
+
+        <label>E-Mail</label>
+        <input type="email" name="email" required>
+
+        <label>Privat oder Gewerbe?</label>
+        <input name="typ" required>
+
+        <label>Nachricht</label>
+        <textarea name="message" rows="5" required></textarea>
+
+        <label style="display:flex; gap:10px; margin-top:12px;">
+          <input type="checkbox" required>
+          <span style="font-size:13px;">
+            Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen.
+          </span>
+        </label>
+
+        <div class="cta" style="margin-top:14px;">
+          <button type="submit" class="btn primary">Anfrage senden</button>
+
+          <a class="btn"
+             href="https://wa.me/4915734483625?text=Hallo%20Aura%20Sales%20Solutions,%20ich%20m%C3%B6chte%20eine%20Anfrage%20stellen."
+             target="_blank">
+             WhatsApp Business öffnen
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
       <div style="margin-bottom:12px;">
         <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required
