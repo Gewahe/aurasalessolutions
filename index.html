@@ -247,7 +247,7 @@
     summary{cursor:pointer; font-weight: 850;}
     details p{color: var(--muted); margin: 8px 0 0;}
 
-    /* Legal pages (Impressum/Datenschutz) */
+    /* Legal */
     .legal h3{margin: 0 0 8px;}
     .legal p, .legal li{color: var(--muted);}
     .legal .small{font-size: 13px; color: var(--muted);}
@@ -267,7 +267,7 @@
       color: var(--muted);
     }
     .legal .table tr:first-child td{border-top:none;}
-    .legal .table td:first-child{width: 240px; color:#2b3442; font-weight: 700;}
+    .legal .table td:first-child{width: 240px; color:#2b3442; font-weight: 800;}
 
     footer{
       padding: 24px 0 42px;
@@ -278,6 +278,30 @@
     .fine{display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px;}
     .fine a{color: var(--muted); text-decoration:none}
     .fine a:hover{color: var(--text); text-decoration:underline}
+
+    /* WhatsApp Button */
+    .whatsapp-btn{
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25D366, #1ebe5d);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+      z-index: 999;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .whatsapp-btn:hover{
+      transform: scale(1.08);
+      box-shadow: 0 15px 35px rgba(0,0,0,.35);
+    }
   </style>
 </head>
 
@@ -286,7 +310,6 @@
     <div class="wrap">
       <div class="nav">
         <a class="brand" href="#top" aria-label="Startseite">
-          <!-- Dein Logo (Dateiname muss exakt stimmen) -->
           <img src="IMG-20251116-WA0019.jpg" alt="Aura Sales Solutions Logo" class="logo" />
           <div class="name">
             <strong>Aura Sales Solutions</strong>
@@ -309,4 +332,419 @@
 
   <main id="top">
     <!-- HERO -->
-    <div class="wra
+    <div class="wrap hero">
+      <div class="hero-grid">
+        <div>
+          <h1 class="h1">
+            Strom & Gas <span class="gold">klar einordnen</span> – ohne Druck.
+          </h1>
+
+          <p class="sub">
+            <strong>Kostenfrei & unverbindlich:</strong> Wir beraten Sie transparent und individuell zu Strom- und Gastarifen.
+            Unsere Dienstleistung ist für Sie vollständig kostenfrei. Auf dieser Grundlage entscheiden <strong>Sie</strong>,
+            ob alles passt oder ob es bessere Optionen gibt.
+          </p>
+
+          <div class="pillrow" aria-label="Vorteile">
+            <span class="pill">Warm & vertrauensvoll</span>
+            <span class="pill">Kostenfrei & unverbindlich</span>
+            <span class="pill">Privat & Gewerbe</span>
+            <span class="pill">Sie entscheiden</span>
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="#kontakt">Unverbindlich anfragen</a>
+            <a class="btn" href="#privat">Ablauf ansehen</a>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Kurzinfo">
+          <h3>Unser Versprechen</h3>
+          <p>
+            Wir ordnen Ihren Tarif verständlich ein und zeigen Optionen transparent auf.
+            Ein Wechsel findet nur statt, wenn Sie das ausdrücklich möchten.
+          </p>
+          <p style="margin-top:12px;">
+            <strong>Keine Hektik:</strong> Sie behalten jederzeit die Kontrolle.
+          </p>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Wer sind wir -->
+    <section id="wer-wir-sind">
+      <div class="wrap">
+        <h2 class="section-title">Wer sind wir</h2>
+
+        <div class="band">
+          <strong>Unser Grundsatz:</strong> Energie ist Vertrauenssache. Wir beraten so, wie wir selbst beraten werden möchten:
+          verständlich, fair und ohne Druck.
+        </div>
+
+        <div class="grid-2" style="margin-top:14px;">
+          <div class="box">
+            <h4>Unser Ansatz</h4>
+            <p>
+              Wir ordnen Ihren Tarif ein – transparent und nachvollziehbar: Preisbestandteile, Laufzeiten, Kündigungsfristen,
+              Bonuslogik und mögliche Stolpersteine. Ohne Fachchinesisch.
+            </p>
+          </div>
+          <div class="box">
+            <h4>Was Sie von uns erwarten können</h4>
+            <ul class="list">
+              <li>klare Einordnung statt Verkaufsfloskeln</li>
+              <li>Optionen mit Vor- & Nachteilen</li>
+              <li>Sie entscheiden – wir unterstützen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privatkunden -->
+    <section id="privat">
+      <div class="wrap">
+        <h2 class="section-title">Privatkunden: So läuft der Tarifcheck ab</h2>
+        <p class="sub" style="margin-top:-4px;">Einfach, transparent und ohne Druck:</p>
+
+        <div class="steps" role="list">
+          <div class="step" role="listitem">
+            <div class="num">1</div>
+            <div>
+              <h4>Tarifdaten senden</h4>
+              <p>Sie schicken uns die wichtigsten Infos (z. B. Arbeitspreis/Grundpreis, Laufzeit, Bonus). So wenig wie möglich – so viel wie nötig.</p>
+            </div>
+          </div>
+          <div class="step" role="listitem">
+            <div class="num">2</div>
+            <div>
+              <h4>Einordnung & Vergleich</h4>
+              <p>Wir prüfen und erklären verständlich, wie Ihr Tarif im Vergleich steht – ohne Druck.</p>
+            </div>
+          </div>
+          <div class="step" role="listitem">
+            <div class="num">3</div>
+            <div>
+              <h4>Optionen (wenn sinnvoll)</h4>
+              <p>Gibt es Verbesserungen, zeigen wir Alternativen mit Vor- und Nachteilen. Ist alles gut, sagen wir das auch.</p>
+            </div>
+          </div>
+          <div class="step" role="listitem">
+            <div class="num">4</div>
+            <div>
+              <h4>Sie entscheiden</h4>
+              <p>Sie entscheiden in Ruhe, ob Sie etwas ändern möchten. Wenn ja, begleiten wir den nächsten Schritt – ansonsten bleibt alles wie es ist.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gewerbekunden -->
+    <section id="gewerbe">
+      <div class="wrap">
+        <h2 class="section-title">Gewerbekunden: Strom & Gas für Unternehmen</h2>
+
+        <div class="grid-2">
+          <div class="box">
+            <h4>Für wen ist das geeignet?</h4>
+            <ul class="list">
+              <li>Kleine & mittlere Unternehmen</li>
+              <li>Praxen, Büros, Gastronomie</li>
+              <li>Handwerk, Filialen, Vereine</li>
+              <li>Gewerbe mit planbarem Verbrauch</li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <h4>Was wir für Gewerbekunden beachten</h4>
+            <p>
+              Bei Gewerbetarifen zählen oft andere Faktoren: Vertragsmodelle, Laufzeiten, Preisgarantien,
+              Abnahmemengen/Lastprofile und Konditionen. Wir erklären die Unterschiede verständlich und zeigen passende Optionen.
+            </p>
+          </div>
+        </div>
+
+        <div class="steps" style="margin-top:14px;">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <h4>Kurzer Bedarf-Check</h4>
+              <p>Branche, Standorte/Filialen, Zähler, Verbrauch (falls vorhanden), gewünschte Laufzeit.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <h4>Transparente Angebotsübersicht</h4>
+              <p>Wir zeigen Ihnen verständlich, welche Optionen sinnvoll sind – inkl. Vor- & Nachteilen.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <h4>Sie entscheiden – wir begleiten</h4>
+              <p>Sie wählen in Ruhe. Wenn Sie möchten, unterstützen wir bei Umsetzung und Kommunikation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="band" style="margin-top:14px;">
+          <strong>Tipp:</strong> Gewerbe lohnt sich besonders, wenn Ihre Verträge älter sind, sich Ihr Verbrauch verändert hat
+          oder Sie mehr Planungssicherheit durch passende Laufzeiten möchten.
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt">
+      <div class="wrap">
+        <h2 class="section-title">Kontakt</h2>
+
+        <div class="contact">
+          <div class="box">
+            <h4>Unverbindlich anfragen</h4>
+            <p>Schreiben Sie uns kurz, ob es um <strong>Privat</strong> oder <strong>Gewerbe</strong> geht – wir melden uns zeitnah.</p>
+
+            <div class="cta" style="margin-top:14px;">
+              <a class="btn primary"
+                 href="mailto:info@aurasalessolutions.de?subject=Tarifcheck%20Anfrage%20(Privat%2FGewerbe)&body=Hallo%20Aura%20Sales%20Solutions,%0D%0A%0D%0Aich%20m%C3%B6chte%20meinen%20Tarif%20einordnen%20lassen.%0D%0A%0D%0AArt:%20Privat%20/%20Gewerbe%0D%0AName:%0D%0ATelefon%20(optional):%0D%0APLZ/Ort:%0D%0AStrom%20oder%20Gas%20oder%20beides:%0D%0AJahresverbrauch%20(optional):%0D%0AAnliegen:%0D%0A%0D%0AVielen%20Dank!">
+                E-Mail schreiben
+              </a>
+              <a class="btn" href="#faq">FAQ</a>
+            </div>
+
+            <p class="hint">Telefon: <strong>0157 344 83 625</strong></p>
+          </div>
+
+          <div class="card">
+            <h3>Kurzes Formular (statisch)</h3>
+            <p style="margin-bottom:12px;">
+              Dieses Formular sendet nichts automatisch. Wenn ihr wollt, kann ich es später an ein Formular-Backend anbinden (bleibt statisch).
+            </p>
+
+            <form onsubmit="return false" aria-label="Kontaktformular (statisch)">
+              <label for="typ">Privat oder Gewerbe?</label>
+              <input id="typ" name="typ" placeholder="Privat / Gewerbe" />
+
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Ihr Name" />
+
+              <label for="email">E-Mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="name@beispiel.de" />
+
+              <label for="msg">Nachricht</label>
+              <textarea id="msg" name="msg" placeholder="Kurz Ihr Anliegen (optional: Tarifdaten, Laufzeit, Bonus, Verbrauch, Zählerzahl/Standorte bei Gewerbe)"></textarea>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="wrap">
+        <h2 class="section-title">FAQ</h2>
+
+        <div style="display:grid; gap:12px;">
+          <details>
+            <summary>Kostet mich das etwas?</summary>
+            <p>
+              <strong>Kostenfrei & unverbindlich</strong><br>
+              Wir beraten Sie transparent und individuell zu Strom- und Gastarifen. Unsere Dienstleistung ist für Sie vollständig kostenfrei.<br>
+              Im Falle eines Vertragsabschlusses erhalten wir eine Provision vom jeweiligen Energieversorger – für Sie entstehen keinerlei Mehrkosten.
+            </p>
+          </details>
+
+          <details>
+            <summary>Ist das wirklich ohne Druck?</summary>
+            <p>Ja. Sie bekommen eine klare Einordnung. Ob Sie etwas ändern möchten, entscheiden ausschließlich Sie.</p>
+          </details>
+
+          <details>
+            <summary>Welche Daten braucht ihr?</summary>
+            <p>Hilfreich sind Arbeitspreis/Grundpreis, Laufzeit/Kündigungsfrist, ggf. Bonus, Abschlag und Verbrauch (falls bekannt). Bei Gewerbe zusätzlich: Anzahl Zähler/Standorte und gewünschte Laufzeit.</p>
+          </details>
+
+          <details>
+            <summary>Muss ich wechseln?</summary>
+            <p>Nein. Wenn Ihr Tarif gut passt, sagen wir das auch. Ein Wechsel erfolgt nur auf Ihren Wunsch.</p>
+          </details>
+
+          <details>
+            <summary>Wie schnell bekomme ich eine Rückmeldung?</summary>
+            <p>Meist innerhalb von 1–2 Werktagen – abhängig davon, wie vollständig die Angaben sind.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPRESSUM -->
+    <section id="impressum" class="legal">
+      <div class="wrap">
+        <h2 class="section-title">Impressum</h2>
+
+        <div class="box">
+          <p class="small">Angaben gemäß § 5 TMG</p>
+
+          <table class="table" aria-label="Impressum Angaben">
+            <tr><td>Anbieter</td><td><strong>Aura Sales Solutions</strong></td></tr>
+            <tr><td>Inhaber</td><td><strong>Gerd Hechtle</strong></td></tr>
+            <tr><td>Adresse</td><td>Bodenseestraße 7, 78532 Tuttlingen, Deutschland</td></tr>
+            <tr><td>Telefon</td><td>0157 344 83 625</td></tr>
+            <tr><td>E-Mail</td><td><a href="mailto:info@aurasalessolutions.de">info@aurasalessolutions.de</a></td></tr>
+            <tr><td>Steuernummer</td><td><em>[Steuernummer einfügen]</em></td></tr>
+          </table>
+
+          <h3 style="margin-top:16px;">Verantwortlich für den Inhalt</h3>
+          <p>
+            Verantwortlich i. S. d. § 18 Abs. 2 MStV:<br>
+            Gerd Hechtle, Bodenseestraße 7, 78532 Tuttlingen
+          </p>
+
+          <h3>Haftung für Inhalte</h3>
+          <p>
+            Als Diensteanbieter sind wir gemäß den allgemeinen Gesetzen für eigene Inhalte auf diesen Seiten verantwortlich.
+            Wir übernehmen jedoch keine Gewähr für die Aktualität, Vollständigkeit und Richtigkeit der Inhalte.
+          </p>
+
+          <h3>Haftung für Links</h3>
+          <p>
+            Unsere Seite kann Links zu externen Websites Dritter enthalten, auf deren Inhalte wir keinen Einfluss haben.
+            Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+          </p>
+
+          <h3>Urheberrecht</h3>
+          <p>
+            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+            Beiträge Dritter sind als solche gekennzeichnet.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATENSCHUTZ -->
+    <section id="datenschutz" class="legal">
+      <div class="wrap">
+        <h2 class="section-title">Datenschutzerklärung</h2>
+
+        <div class="box">
+          <p class="small">Stand: <span id="ds-date"></span></p>
+
+          <h3>1. Verantwortlicher</h3>
+          <p>
+            Aura Sales Solutions<br>
+            Inhaber: Gerd Hechtle<br>
+            Bodenseestraße 7, 78532 Tuttlingen, Deutschland<br>
+            Telefon: 0157 344 83 625<br>
+            E-Mail: <a href="mailto:info@aurasalessolutions.de">info@aurasalessolutions.de</a>
+          </p>
+
+          <h3>2. Allgemeines zur Datenverarbeitung</h3>
+          <p>
+            Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung einer funktionsfähigen Website
+            sowie unserer Inhalte und Leistungen erforderlich ist. Die Verarbeitung erfolgt auf Grundlage der DSGVO.
+          </p>
+
+          <h3>3. Hosting (GitHub Pages)</h3>
+          <p>
+            Diese Website wird über GitHub Pages bereitgestellt. Dabei verarbeitet GitHub in der Regel technische Zugriffsdaten
+            (z. B. IP-Adresse, Datum/Uhrzeit, angeforderte Seite, Browserinformationen), um die Website auszuliefern und zu schützen.
+            Dabei kann es zu einer Verarbeitung in Drittländern (z. B. USA) kommen.
+          </p>
+          <p>
+            Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherer und effizienter Bereitstellung der Website).
+          </p>
+
+          <h3>4. Zugriffsdaten / Server-Logfiles</h3>
+          <p>
+            Beim Aufruf unserer Website können technisch notwendige Daten verarbeitet werden (z. B. IP-Adresse, Browsertyp,
+            Betriebssystem, Referrer-URL, Uhrzeit des Zugriffs). Diese Daten dienen der technischen Bereitstellung, Stabilität und Sicherheit.
+          </p>
+
+          <h3>5. Kontaktaufnahme</h3>
+          <p>
+            Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten Daten (z. B. Name, E-Mail-Adresse, Inhalt),
+            um Ihre Anfrage zu bearbeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen/Vertrag) oder
+            Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung von Anfragen).
+          </p>
+
+          <h3>6. Cookies / Tracking</h3>
+          <p>
+            Wir setzen auf dieser Website derzeit keine Cookies zu Marketing- oder Trackingzwecken ein.
+            Es können jedoch technisch notwendige Mechanismen durch den Hosting-Anbieter verwendet werden.
+          </p>
+
+          <h3>7. Empfänger von Daten</h3>
+          <p>
+            Empfänger der Daten können technische Dienstleister (z. B. Hosting-Anbieter) sein, die wir zur Bereitstellung der Website einsetzen.
+          </p>
+
+          <h3>8. Speicherdauer</h3>
+          <p>
+            Wir speichern personenbezogene Daten nur so lange, wie es für die jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen.
+          </p>
+
+          <h3>9. Ihre Rechte</h3>
+          <ul>
+            <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+            <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+            <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+            <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+            <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+            <li>Widerspruchsrecht (Art. 21 DSGVO)</li>
+          </ul>
+          <p>Zur Ausübung Ihrer Rechte genügt eine formlose Mitteilung an die oben genannten Kontaktdaten.</p>
+
+          <h3>10. Beschwerderecht bei einer Aufsichtsbehörde</h3>
+          <p>
+            Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig ist in der Regel die Aufsichtsbehörde
+            Ihres gewöhnlichen Aufenthaltsorts oder unseres Unternehmenssitzes (Baden-Württemberg).
+          </p>
+
+          <h3>11. Pflicht zur Bereitstellung von Daten</h3>
+          <p>
+            Die Bereitstellung personenbezogener Daten ist weder gesetzlich noch vertraglich vorgeschrieben. Ohne bestimmte Angaben
+            kann eine Bearbeitung Ihrer Anfrage jedoch eingeschränkt sein.
+          </p>
+
+          <p class="small" style="margin-top:14px;">
+            Hinweis: Wenn ihr später z. B. Analyse-Tools, Newsletter oder ein Kontaktformular-Backend einbindet,
+            muss die Datenschutzerklärung entsprechend ergänzt werden.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div><strong>Aura Sales Solutions</strong> · Strom- & Gas-Tarifcheck</div>
+        <div class="fine">
+          <a href="#top">Nach oben</a>
+          <span>·</span>
+          <a href="#impressum">Impressum</a>
+          <span>·</span>
+          <a href="#datenschutz">Datenschutz</a>
+        </div>
+        <div style="margin-top:10px;">© <span id="y"></span> Aura Sales Solutions</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- WhatsApp Floating Button (öffnet WhatsApp direkt) -->
+  <a class="whatsapp-btn"
+     href="https://wa.me/4915734483625?text=Hallo%20Aura%20Sales%20Solutions,%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Tarifcheck."
+     target="_blank"
+     rel="noopener"
+     aria-label="WhatsApp Kontakt">
+     💬
+  </a>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    const d = new Date();
+    const pad = (n)=> String(n).padStart(2,"0");
+    document.getElementById("ds-date").textContent = `${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()}`;
+  </script>
+</body>
+</html>
