@@ -528,49 +528,48 @@
     </section>
 
     <!-- Kontakt -->
-    <section id="kontakt">
-      <div class="wrap">
-        <h2 class="section-title">Kontakt</h2>
+   <div class="wrap">
+  <div class="card">
+    <h2>Kontakt</h2>
+    <p>Sie möchten Ihre Tarife prüfen lassen oder haben Fragen? Schreiben Sie uns.</p>
 
-        <div class="contact">
-          <div class="box">
-            <h4>Unverbindlich anfragen</h4>
-            <p>Schreiben Sie uns kurz, ob es um <strong>Privat</strong> oder <strong>Gewerbe</strong> geht – wir melden uns zeitnah.</p>
+    <form action="https://formsubmit.co/info@aurasalessolutions.de" method="POST">
+      
+      <!-- Spam-Schutz -->
+      <input type="hidden" name="_captcha" value="false">
 
-            <div class="cta" style="margin-top:14px;">
-              <a class="btn primary"
-                 href="mailto:info@aurasalessolutions.de?subject=Tarifcheck%20Anfrage%20(Privat%2FGewerbe)&body=Hallo%20Aura%20Sales%20Solutions,%0D%0A%0D%0Aich%20m%C3%B6chte%20meinen%20Tarif%20einordnen%20lassen.%0D%0A%0D%0AArt:%20Privat%20/%20Gewerbe%0D%0AName:%0D%0ATelefon%20(optional):%0D%0APLZ/Ort:%0D%0AStrom%20oder%20Gas%20oder%20beides:%0D%0AJahresverbrauch%20(optional):%0D%0AAnliegen:%0D%0A%0D%0AVielen%20Dank!">
-                E-Mail schreiben
-              </a>
-              <a class="btn" href="#faq">FAQ</a>
-            </div>
-
-            <p class="hint">Telefon: <strong>0157 344 83 625</strong></p>
-          </div>
-
-          <div class="card">
-            <h3>Kurzes Formular (statisch)</h3>
-            <p style="margin-bottom:12px;">
-              Dieses Formular sendet nichts automatisch. Wenn ihr wollt, kann ich es später an ein Formular-Backend anbinden (bleibt statisch).
-            </p>
-
-            <form onsubmit="return false" aria-label="Kontaktformular (statisch)">
-              <label for="typ">Privat oder Gewerbe?</label>
-              <input id="typ" name="typ" placeholder="Privat / Gewerbe" />
-
-              <label for="name">Name</label>
-              <input id="name" name="name" autocomplete="name" placeholder="Ihr Name" />
-
-              <label for="email">E-Mail</label>
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="name@beispiel.de" />
-
-              <label for="msg">Nachricht</label>
-              <textarea id="msg" name="msg" placeholder="Kurz Ihr Anliegen (optional: Tarifdaten, Laufzeit, Bonus, Verbrauch, Zählerzahl/Standorte bei Gewerbe)"></textarea>
-            </form>
-          </div>
-        </div>
+      <div style="margin-bottom:12px;">
+        <input type="text" name="name" placeholder="Ihr Name" required
+          style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;">
       </div>
-    </section>
+
+      <div style="margin-bottom:12px;">
+        <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required
+          style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;">
+      </div>
+
+      <div style="margin-bottom:12px;">
+        <textarea name="message" rows="5" placeholder="Ihre Nachricht" required
+          style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;"></textarea>
+      </div>
+
+      <button type="submit"
+        style="background:#caa24a; color:white; padding:10px 18px; border:none; border-radius:8px; font-weight:600;">
+        Anfrage senden
+      </button>
+    </form>
+
+    <p style="margin-top:20px;">
+      Oder schreiben Sie uns direkt über WhatsApp:
+    </p>
+
+    <a href="https://wa.me/4915734483625" target="_blank"
+       style="display:inline-block; background:#25D366; color:white; padding:10px 16px;
+              border-radius:8px; text-decoration:none; font-weight:600;">
+       WhatsApp Business öffnen
+    </a>
+  </div>
+</div>
 
     <!-- FAQ -->
     <section id="faq">
