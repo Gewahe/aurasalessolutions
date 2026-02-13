@@ -746,5 +746,22 @@ Sitzes unseres Unternehmens (Baden-Württemberg).
     const pad = (n)=> String(n).padStart(2,"0");
     document.getElementById("ds-date").textContent = `${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()}`;
   </script>
+  <script>
+  // Öffnet Impressum/Datenschutz automatisch, wenn man per Link dorthin springt
+  function openDetailsFromHash() {
+    const id = location.hash && location.hash.substring(1);
+    if (!id) return;
+
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    const details = section.querySelector("details");
+    if (details) details.open = true;
+  }
+
+  window.addEventListener("hashchange", openDetailsFromHash);
+  window.addEventListener("load", openDetailsFromHash);
+</script>
+
 </body>
 </html>
