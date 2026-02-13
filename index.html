@@ -1,81 +1,502 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Aura Sales Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aura Sales Solutions – Strom- & Gas-Tarifcheck ohne Druck</title>
+  <meta name="description" content="Wir helfen Ihnen, Ihren Strom- und Gastarif ehrlich einzuordnen – transparent, verständlich, ohne Druck. Sie entscheiden." />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
+    :root{
+      --bg:#0b1220;
+      --card:#101a33;
+      --muted:#b8c2e0;
+      --text:#eef2ff;
+      --accent:#7dd3fc;
+      --accent2:#a7f3d0;
+      --line: rgba(255,255,255,.12);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1040px;
+      --pad: 20px;
     }
-    header {
-      text-align: center;
-      padding: 20px 0;
-      background-color: #2a5bd7;
-      color: white;
-      border-radius: 8px;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(900px 500px at 20% 0%, rgba(125,211,252,.18), transparent 60%),
+                  radial-gradient(900px 500px at 90% 20%, rgba(167,243,208,.14), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.55;
     }
-    h1 {
-      margin: 0;
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 0 var(--pad);}
+    header{
+      position: sticky; top:0; z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.72);
+      border-bottom: 1px solid var(--line);
     }
-    section {
-      margin: 30px 0;
-      padding: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
     }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+      text-decoration:none;
+      white-space:nowrap;
     }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #666;
+    .dot{
+      width:12px; height:12px; border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(125,211,252,.12);
     }
-    a {
-      color: #2a5bd7;
-      text-decoration: none;
+    .links{
+      display:flex; flex-wrap:wrap; gap: 12px;
+      justify-content:flex-end;
     }
-    a:hover {
-      text-decoration: underline;
+    .links a{
+      text-decoration:none;
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--muted);
     }
+    .links a:hover{background: rgba(255,255,255,.06); color: var(--text);}
+    .hero{
+      padding: 54px 0 28px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 880px){
+      .hero-grid{grid-template-columns:1fr}
+      .links{display:none}
+    }
+    .h1{
+      font-size: clamp(30px, 3.6vw, 46px);
+      line-height: 1.08;
+      margin: 0 0 14px;
+    }
+    .sub{
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0 0 20px;
+      max-width: 68ch;
+    }
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin: 12px 0 22px;}
+    .pill{
+      border: 1px solid var(--line);
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      background: rgba(255,255,255,.04);
+    }
+    .cta{
+      display:flex; gap: 12px; flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 650;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      box-shadow: var(--shadow);
+    }
+    .btn.primary{
+      border-color: rgba(125,211,252,.35);
+      background: linear-gradient(135deg, rgba(125,211,252,.26), rgba(167,243,208,.16));
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .card{
+      background: rgba(16,26,51,.75);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .card h3{margin: 0 0 8px; font-size: 16px}
+    .card p{margin: 0; color: var(--muted); font-size: 14px}
+    section{padding: 28px 0;}
+    .section-title{
+      font-size: 22px;
+      margin: 0 0 12px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 880px){ .grid-2{grid-template-columns:1fr} }
+    .box{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .box h4{margin:0 0 6px}
+    .box p{margin:0; color:var(--muted)}
+    .list{margin: 10px 0 0; padding-left: 18px; color: var(--muted)}
+    .steps{
+      display:grid; gap: 12px;
+    }
+    .step{
+      display:flex; gap:12px; align-items:flex-start;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: rgba(255,255,255,.04);
+    }
+    .num{
+      min-width: 34px; height: 34px; border-radius: 12px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(125,211,252,.25), rgba(167,243,208,.14));
+      border: 1px solid rgba(255,255,255,.10);
+      font-weight: 750;
+    }
+    .step h4{margin: 0 0 4px}
+    .step p{margin: 0; color: var(--muted)}
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    @media (max-width: 880px){ .contact{grid-template-columns:1fr} }
+    label{display:block; font-size: 14px; color: var(--muted); margin: 10px 0 6px;}
+    input, textarea{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      outline: none;
+    }
+    textarea{min-height: 120px; resize: vertical;}
+    .hint{color: var(--muted); font-size: 13px; margin-top: 10px;}
+    details{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      padding: 12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight: 650;
+    }
+    details p{color: var(--muted); margin: 8px 0 0;}
+    footer{
+      padding: 26px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .fine{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .fine a{color: var(--muted); text-decoration:none}
+    .fine a:hover{color: var(--text); text-decoration: underline}
   </style>
 </head>
+
 <body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Startseite">
+          <span class="dot" aria-hidden="true"></span>
+          Aura Sales Solutions
+        </a>
+        <nav class="links" aria-label="Navigation">
+          <a href="#wer-wir-sind">Wer wir sind</a>
+          <a href="#tarifchaos">Tarifchaos</a>
+          <a href="#loesung">Unsere Lösung</a>
+          <a href="#kontakt">Kontakt</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-<header>
-  <h1>Aura Sales Solutions</h1>
-  <p>Vermittlung von Strom- und Gastarifen</p>
-</header>
+  <main id="top">
+    <!-- HERO -->
+    <div class="wrap hero">
+      <div class="hero-grid">
+        <div>
+          <h1 class="h1">Strom & Gas verständlich – <span style="color:var(--accent)">ohne Druck</span>.</h1>
+          <p class="sub">
+            Wir helfen Ihnen, Ihren aktuellen Tarif <strong>ehrlich einzuordnen</strong>.
+            Sie bekommen Klarheit darüber, ob Ihr Vertrag gut zu Ihnen passt – und welche
+            Verbesserungsmöglichkeiten es geben könnte. <strong>Sie entscheiden jederzeit selbst.</strong>
+          </p>
 
-<section>
-  <h2>Unsere Leistungen</h2>
-  <ul>
-    <li>Individuelle Stromtarif-Beratung</li>
-    <li>Optimale Gastarif-Vermittlung</li>
-    <li>Transparente Tarifvergleiche</li>
-    <li>Unterstützung beim Anbieterwechsel</li>
-  </ul>
-</section>
+          <div class="pillrow" aria-label="Vorteile">
+            <span class="pill">Transparente Einordnung</span>
+            <span class="pill">Kein Verkaufsdruck</span>
+            <span class="pill">Einfacher Ablauf</span>
+            <span class="pill">Sie behalten die Kontrolle</span>
+          </div>
 
-<section>
-  <h2>Kontakt</h2>
-  <p>Schreiben Sie uns eine E-Mail: <a href="mailto:kontakt@aurasalessolutions.de">kontakt@aurasalessolutions.de</a></p>
-</section>
+          <div class="cta">
+            <a class="btn primary" href="#kontakt">Tarif prüfen lassen</a>
+            <a class="btn" href="#loesung">So läuft’s ab</a>
+          </div>
+        </div>
 
-<footer>
-  <p>&copy; 2026 Aura Sales Solutions. Alle Rechte vorbehalten.</p>
-  <p><a href="#">Impressum & Datenschutz</a></p>
-</footer>
+        <aside class="card" aria-label="Kurzinfo">
+          <h3>Wofür wir stehen</h3>
+          <p>
+            Klarheit statt Tarifchaos: Wir erklären verständlich, was Ihr Tarif bedeutet – und
+            zeigen Optionen auf, wenn es sinnvoll ist. Kein „Jetzt sofort!“, kein Kleingedrucktes, kein Druck.
+          </p>
+          <p style="margin-top:12px;">
+            <strong>Hinweis:</strong> Ein Anbieterwechsel erfolgt nur, wenn Sie das ausdrücklich möchten.
+          </p>
+        </aside>
+      </div>
+    </div>
 
+    <!-- 1. WER SIND WIR -->
+    <section id="wer-wir-sind">
+      <div class="wrap">
+        <h2 class="section-title">1. Wer sind wir</h2>
+        <div class="grid-2">
+          <div class="box">
+            <h4>Unser Grundsatz</h4>
+            <p>
+              Energieverträge sind oft unnötig kompliziert. Unser Ziel ist, dass Sie Ihre Situation
+              <strong>verständlich</strong> und <strong>realistisch</strong> einschätzen können – damit Sie eine
+              Entscheidung treffen, die zu Ihrem Alltag passt.
+            </p>
+          </div>
+          <div class="box">
+            <h4>Unser Ansatz</h4>
+            <p>
+              Wir vergleichen nicht „irgendwas“, sondern ordnen Ihren Tarif ein:
+              Verbrauch, Laufzeit, Preisbestandteile, Bonuslogik und mögliche Fallstricke –
+              transparent erklärt, ohne Fachchinesisch.
+            </p>
+            <ul class="list">
+              <li>Neutral & nachvollziehbar</li>
+              <li>Kein Druck, kein „Hard Selling“</li>
+              <li>Sie entscheiden – wir liefern die Orientierung</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TARIFCHAOS -->
+    <section id="tarifchaos">
+      <div class="wrap">
+        <h2 class="section-title">2. Tarifchaos statt Klarheit?</h2>
+        <div class="grid-2">
+          <div class="box">
+            <h4>Typische Stolpersteine</h4>
+            <ul class="list">
+              <li>Unübersichtliche Preisbestandteile (Arbeitspreis, Grundpreis, Boni)</li>
+              <li>Verlängerungen & Kündigungsfristen</li>
+              <li>Tarife, die nicht zum tatsächlichen Verbrauch passen</li>
+              <li>„Günstig“ wirkt gut – ist aber nicht immer dauerhaft günstig</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>Was Ihnen das kostet</h4>
+            <p>
+              Häufig nicht nur Geld, sondern auch Zeit und Unsicherheit.
+              Genau deshalb lohnt sich eine kurze, klare Einordnung – damit Sie wissen,
+              wo Sie stehen und welche Optionen es gibt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. UNSERE LÖSUNG / ABLAUF -->
+    <section id="loesung">
+      <div class="wrap">
+        <h2 class="section-title">3. Unsere Lösung</h2>
+        <p class="sub" style="margin-top:-4px;">
+          Ein transparenter Ablauf – Schritt für Schritt. (Wenn du mir den Anhang/den genauen Ablauftext gibst,
+          ersetze ich die Schritte unten exakt danach.)
+        </p>
+
+        <div class="steps" role="list" aria-label="Ablauf in vier Schritten">
+          <div class="step" role="listitem">
+            <div class="num">1</div>
+            <div>
+              <h4>Sie senden Ihre Tarifdaten</h4>
+              <p>
+                Z. B. letzter Abschlag, Jahresverbrauch (falls bekannt), Arbeitspreis/Grundpreis,
+                Vertragslaufzeit, ggf. Bonus. So viel wie nötig – so wenig wie möglich.
+              </p>
+            </div>
+          </div>
+
+          <div class="step" role="listitem">
+            <div class="num">2</div>
+            <div>
+              <h4>Wir ordnen Ihren Tarif ehrlich ein</h4>
+              <p>
+                Wir prüfen, wie Ihr Tarif im Vergleich steht (Preise, Konditionen, Laufzeiten)
+                und erklären Ihnen verständlich, worauf es wirklich ankommt.
+              </p>
+            </div>
+          </div>
+
+          <div class="step" role="listitem">
+            <div class="num">3</div>
+            <div>
+              <h4>Sie erhalten Optionen – klar & übersichtlich</h4>
+              <p>
+                Wenn es Verbesserungsmöglichkeiten gibt, zeigen wir Alternativen (mit Vor- & Nachteilen).
+                Wenn Ihr Tarif bereits gut ist, sagen wir das genauso.
+              </p>
+            </div>
+          </div>
+
+          <div class="step" role="listitem">
+            <div class="num">4</div>
+            <div>
+              <h4>Sie entscheiden – wir unterstützen</h4>
+              <p>
+                Sie entscheiden in Ruhe, ob Sie etwas ändern möchten. Kein Druck.
+                Wenn Sie möchten, begleiten wir den nächsten Schritt – ansonsten bleibt alles wie es ist.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:14px;">
+          <h4>Wichtig</h4>
+          <p>
+            Unser Ziel ist nicht „Hauptsache Wechsel“, sondern dass Sie eine Entscheidung treffen,
+            die sich für Sie richtig anfühlt – finanziell und organisatorisch.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. KONTAKT -->
+    <section id="kontakt">
+      <div class="wrap">
+        <h2 class="section-title">4. Kontakt</h2>
+
+        <div class="contact">
+          <div class="box">
+            <h4>Unverbindlich anfragen</h4>
+            <p>
+              Schreiben Sie uns kurz, worum es geht. Wir melden uns zeitnah zurück.
+              Wenn Sie möchten, können Sie direkt Ihre Tarifdaten mitschicken – ist aber kein Muss.
+            </p>
+
+            <!-- Button/Optionen: Mailto ist statisch und funktioniert ohne Backend -->
+            <div class="cta" style="margin-top:14px;">
+              <a class="btn primary" href="mailto:info@DEINE-DOMAIN.de?subject=Tarifcheck%20anfragen&body=Hallo%20Aura%20Sales%20Solutions,%0D%0A%0D%0Aich%20m%C3%B6chte%20meinen%20Strom/Gas-Tarif%20einordnen%20lassen.%0D%0A%0D%0AName:%0D%0ATelefon%20(optional):%0D%0AOrt/PLZ:%0D%0AStrom%20oder%20Gas%20oder%20beides:%0D%0AJahresverbrauch%20(optional):%0D%0AAnliegen:%0D%0A%0D%0AVielen%20Dank!">
+                E-Mail schreiben
+              </a>
+              <a class="btn" href="#faq">FAQ lesen</a>
+            </div>
+
+            <p class="hint">
+              Tipp: Ersetze <strong>info@DEINE-DOMAIN.de</strong> oben durch eure echte Adresse (z. B. info@aurasalessolutions.de).
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Kurzes Formular (optional)</h3>
+            <p>Dieses Formular ist rein statisch und sendet nichts automatisch. Du kannst es später an ein Backend anbinden.</p>
+
+            <form onsubmit="return false" aria-label="Kontaktformular (statisch)">
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Ihr Name" />
+
+              <label for="email">E-Mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="name@beispiel.de" />
+
+              <label for="msg">Nachricht</label>
+              <textarea id="msg" name="msg" placeholder="Worum geht es? (optional: Tarifdaten, Laufzeit, Bonus, etc.)"></textarea>
+
+              <p class="hint">
+                Wenn du möchtest, kann ich dir auch eine Version bauen, die das Formular an ein kostenloses Formular-Backend sendet
+                (z. B. Formspree o. ä.) – weiterhin statisch.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FAQ -->
+    <section id="faq">
+      <div class="wrap">
+        <h2 class="section-title">5. FAQ</h2>
+
+        <div style="display:grid; gap:12px;">
+          <details>
+            <summary>Wie schnell bekomme ich eine Rückmeldung?</summary>
+            <p>In der Regel innerhalb von 1–2 Werktagen – je nachdem, wie vollständig die Informationen sind.</p>
+          </details>
+
+          <details>
+            <summary>Muss ich meinen Anbieter wechseln?</summary>
+            <p>Nein. Sie bekommen zuerst eine ehrliche Einordnung. Ob Sie etwas ändern, entscheiden ausschließlich Sie.</p>
+          </details>
+
+          <details>
+            <summary>Was braucht ihr von mir für die Einordnung?</summary>
+            <p>Hilfreich sind: aktueller Arbeitspreis & Grundpreis, Vertragslaufzeit/Kündigungsfrist, ggf. Bonus, Abschlag und Verbrauch (falls bekannt).</p>
+          </details>
+
+          <details>
+            <summary>Wie stellt ihr sicher, dass ich nicht „reingeredet“ werde?</summary>
+            <p>Unsere Empfehlung ist nachvollziehbar begründet. Wir zeigen Vor- und Nachteile und sagen auch klar, wenn Ihr Tarif bereits gut ist.</p>
+          </details>
+
+          <details>
+            <summary>Entstehen mir Kosten?</summary>
+            <p>Kommuniziert das hier so, wie es bei euch wirklich ist. Platzhalter: „Die Beratung ist unverbindlich. Etwaige Vergütungen erläutern wir transparent vorab.“</p>
+          </details>
+        </div>
+
+        <p class="hint" style="margin-top:12px;">
+          Hinweis: Passe den Kosten-/Vergütungspunkt bitte exakt an euer Geschäftsmodell an (wichtig für Transparenz).
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div><strong>Aura Sales Solutions</strong> · Strom- & Gas-Tarifcheck</div>
+        <div class="fine">
+          <a href="#top">Nach oben</a>
+          <span>·</span>
+          <a href="#" title="Impressum (Platzhalter)">Impressum</a>
+          <span>·</span>
+          <a href="#" title="Datenschutz (Platzhalter)">Datenschutz</a>
+        </div>
+        <div style="margin-top:10px;">
+          <span>© </span><span id="y"></span><span> Aura Sales Solutions</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Kleiner Komfort: Jahr im Footer (statisch + minimal JS)
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
