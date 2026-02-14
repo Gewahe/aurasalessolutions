@@ -335,6 +335,68 @@
 .legal details > summary{
   display:none;
 }
+    /* Kontaktformular – im Seitenstil */
+form label{
+  display:block;
+  font-weight:700;
+  margin:12px 0 6px;
+  color: var(--text);
+}
+
+form input, form textarea, form select{
+  width:100%;
+  padding:12px 12px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  color: var(--text);
+  font: inherit;
+  outline:none;
+  box-shadow: 0 10px 26px rgba(31,41,55,.05);
+}
+
+form textarea{ min-height: 120px; resize: vertical; }
+
+form input:focus, form textarea:focus, form select:focus{
+  border-color: rgba(202,162,74,.55);
+  box-shadow: 0 0 0 4px rgba(202,162,74,.18);
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+
+@media (max-width: 720px){
+  .form-row{ grid-template-columns: 1fr; }
+}
+
+.form-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-top:14px;
+}
+
+.form-check{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  margin-top:12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.form-check input{ width:auto; margin-top:3px; box-shadow:none; }
+
+.hint{
+  margin-top:12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
   </style>
 </head>
 
