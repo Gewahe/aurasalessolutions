@@ -592,43 +592,59 @@ form input:focus, form textarea:focus, form select:focus{
    <!-- Kontakt -->
 <section id="kontakt">
   <div class="wrap">
-    <div class="card">
-      <h2 class="section-title">Kontakt</h2>
-      <p class="sub">Sie möchten Ihre Tarife prüfen lassen oder haben Fragen? Schreiben Sie uns.</p>
+   <h2 class="section-title">Kontakt</h2>
+<p class="sub">Sie möchten Ihre Tarife prüfen lassen oder haben Fragen? Schreiben Sie uns.</p>
 
-      <form action="https://formsubmit.co/info@aurasalessolutions.de" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="Neue Anfrage über die Website (Aura Sales Solutions)">
-        <input type="hidden" name="_template" value="table">
+<form action="https://formsubmit.co/info@aurasalessolutions.de" method="POST">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="Neue Anfrage über die Website (Aura Sales Solutions)">
+  <input type="hidden" name="_template" value="table">
 
-        <label>Name</label>
-        <input name="name" required>
+  <div class="form-row">
+    <div>
+      <label for="name">Name</label>
+      <input id="name" name="name" autocomplete="name" placeholder="Ihr Name" required>
+    </div>
+    <div>
+      <label for="email">E-Mail</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="name@beispiel.de" required>
+    </div>
+  </div>
 
-        <label>E-Mail</label>
-        <input type="email" name="email" required>
+  <div class="form-row">
+    <div>
+      <label for="typ">Privat oder Gewerbe?</label>
+      <input id="typ" name="typ" placeholder="Privat / Gewerbe" required>
+    </div>
+    <div>
+      <label for="tel">Telefon (optional)</label>
+      <input id="tel" name="telefon" autocomplete="tel" placeholder="z. B. 0157 344 83 625">
+    </div>
+  </div>
 
-        <label>Privat oder Gewerbe?</label>
-        <input name="typ" required>
+  <label for="msg">Nachricht</label>
+  <textarea id="msg" name="message" placeholder="Worum geht es? (optional: Verbrauch, PLZ, Laufzeit, bei Gewerbe: Standorte/Zähler)"></textarea>
 
-        <label>Nachricht</label>
-        <textarea name="message" rows="5" required></textarea>
+  <div class="form-check">
+    <input type="checkbox" id="dsgvo" required>
+    <label for="dsgvo" style="margin:0; font-weight:600;">
+      Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.
+    </label>
+  </div>
 
-        <label style="display:flex; gap:10px; margin-top:12px;">
-          <input type="checkbox" required>
-          <span style="font-size:13px;">
-            Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen.
-          </span>
-        </label>
+  <div class="form-actions">
+    <button type="submit" class="btn primary">Anfrage senden</button>
 
-        <div class="cta" style="margin-top:14px;">
-          <button type="submit" class="btn primary">Anfrage senden</button>
+    <a class="btn"
+       href="https://wa.me/4915734483625?text=Hallo%20Aura%20Sales%20Solutions,%20ich%20m%C3%B6chte%20eine%20Anfrage%20stellen."
+       target="_blank" rel="noopener">
+      WhatsApp Business öffnen
+    </a>
+  </div>
 
-          <a class="btn"
-             href="https://wa.me/4915734483625?text=Hallo%20Aura%20Sales%20Solutions,%20ich%20m%C3%B6chte%20eine%20Anfrage%20stellen."
-             target="_blank">
-             WhatsApp Business öffnen
-          </a>
-        </div>
+  <p class="hint">Ihre Anfrage wird per E-Mail an <strong>info@aurasalessolutions.de</strong> weitergeleitet.</p>
+</form>
+
       </form>
     </div>
   </div>
