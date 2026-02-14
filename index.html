@@ -416,6 +416,40 @@ form input:focus, form textarea:focus, form select:focus{
   filter: brightness(.95);
   transform: translateY(-1px);
 }
+/* CTA-Kasten: schmal, mittig, weiß, goldener Rahmen */
+.cta-premium{
+  max-width: 680px;                 /* nicht zu breit */
+  margin: 18px auto 6px;            /* mittig */
+  padding: 18px 22px;
+  background: #fff;                 /* weißer Kasten */
+  border: 2px solid rgba(202,162,74,.55);  /* goldener Rahmen */
+  border-radius: var(--radius);
+  box-shadow: 0 10px 26px rgba(31,41,55,.08);
+
+  display:flex;                     /* Text + Button nebeneinander */
+  align-items:center;
+  justify-content:space-between;
+  gap: 16px;
+}
+
+/* Text in Gold (wie dein Hero-Gold) */
+.cta-title{
+  font-weight: 900;
+  font-size: 20px;
+  background: linear-gradient(135deg, var(--gold2), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+
+/* Mobile: untereinander, aber trotzdem zentriert */
+@media (max-width: 520px){
+  .cta-premium{
+    justify-content:center;
+    text-align:center;
+  }
+}
 
   </style>
 </head>
