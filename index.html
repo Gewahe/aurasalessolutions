@@ -434,12 +434,28 @@ form input:focus, form textarea:focus, form select:focus{
 
 /* Text in Gold (wie dein Hero-Gold) */
 .cta-title{
-  font-weight: 900;
-  font-size: 20px;
-  background: linear-gradient(135deg, var(--gold2), var(--gold));
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: .4px;
+  font-family: "Georgia", "Times New Roman", serif;  /* eleganter Touch */
+
+  background: linear-gradient(
+    120deg,
+    #f6e6b5 0%,
+    #e8cf8a 25%,
+    #caa24a 55%,
+    #e8cf8a 80%,
+    #f6e6b5 100%
+  );
+
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.6),
+    0 2px 8px rgba(202,162,74,.25);
+
   margin: 0;
 }
 
