@@ -260,13 +260,19 @@
     .hint{color: var(--muted); font-size: 13px; margin-top: 10px;}
 
     /* FAQ */
-    details{
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fff;
-      padding: 12px 14px;
-      box-shadow: 0 8px 26px rgba(31,41,55,.06);
-    }
+    /* Default details neutral (Accordion hat eigene Styles) */
+details{
+  border-radius: var(--radius);
+}
+
+/* FAQ Details Styling */
+#faq details{
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 12px 14px;
+  box-shadow: 0 8px 26px rgba(31,41,55,.06);
+}
+
     summary{cursor:pointer; font-weight: 850;}
     details p{color: var(--muted); margin: 8px 0 0;}
 
