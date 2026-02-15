@@ -512,6 +512,52 @@ form input:focus, form textarea:focus, form select:focus{
 @media (min-width: 860px){
   .clarity{ padding: 26px 28px; }
 }
+    /* --- Accordion Sections (Premium) --- */
+.accordion{
+  display:grid;
+  gap: 14px;
+}
+
+.accordion details{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 8px 26px rgba(31,41,55,.06);
+  overflow: hidden;
+}
+
+.accordion summary{
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 18px;
+  font-weight: 900;
+  font-size: 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+}
+
+.accordion summary::-webkit-details-marker{ display:none; }
+
+.accordion summary::after{
+  content: "＋";
+  font-size: 20px;
+  line-height: 1;
+  color: var(--muted);
+  flex: 0 0 auto;
+}
+
+.accordion details[open] summary::after{
+  content: "—";
+}
+
+.accordion .content{
+  padding: 0 18px 18px;
+  border-top: 1px solid var(--line);
+}
+
+/
   </style>
 </head>
 
