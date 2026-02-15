@@ -590,6 +590,25 @@ form input:focus, form textarea:focus, form select:focus{
   background-clip: initial;
   color: var(--text);
 }
+/* FAQ: Überschrift + Marker/Plus wieder neutral (schwarz) */
+#faq summary{
+  color: var(--text) !important;
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+}
+
+/* Falls ein globales summary::after das Plus erzeugt: im FAQ abschalten */
+#faq summary::after{
+  content: none !important;
+  background: none !important;
+  color: var(--text) !important;
+}
+
+/* Falls der Browser-Marker (Dreieck/Marker) eingefärbt ist */
+#faq summary::marker{
+  color: var(--text) !important;
+}
 
   </style>
 </head>
