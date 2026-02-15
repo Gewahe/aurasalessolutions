@@ -576,6 +576,14 @@ form input:focus, form textarea:focus, form select:focus{
 .accordion{
   margin-top: 18px;
 }
+    .accordion summary::after{
+  transition: transform .2s ease;
+}
+
+.accordion details[open] summary::after{
+  transform: rotate(45deg);
+}
+
   </style>
 </head>
 
