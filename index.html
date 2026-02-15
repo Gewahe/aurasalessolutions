@@ -529,13 +529,21 @@ form input:focus, form textarea:focus, form select:focus{
 .accordion summary{
   cursor: pointer;
   list-style: none;
-  padding: 16px 18px;
+  padding: 18px 18px;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 22px;
+  letter-spacing: .2px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap: 12px;
+
+  /* Gold-Gradient wie im Hero */
+  background: linear-gradient(135deg, var(--gold2), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .accordion summary::-webkit-details-marker{ display:none; }
